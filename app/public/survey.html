@@ -9,14 +9,14 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="../../css/mdb.min.css" rel="stylesheet">
+    <link href="./css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="../../css/style.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
 </head>
 
-<body class="m-0 grey-skin">
+<body class="m-0">
 <div class="container">
     <div class="card mt-2">
         <h5 class="card-header green lighten-3 white-text text-left">
@@ -24,18 +24,18 @@
         </h5>
         <!--Card content-->
         <div class="card-body px-lg-5">
-
             <!-- Form -->
             <form class="text-left" style="color: #757575;">
                 <!-- Name -->
-                <div class="md-form mt-3">
-                    <input type="text" id="formName" class="form-control" placeholder="Jane Doe">
-                    <label for="aboutFormName">Your Full Name</label>
+                <div class="md-form mt-3 mb-4">
+                        <h5 class="h5 pb-1">Your Full Name</h5>
+                    <input type="text" id="formName" class="form-control" placeholder="Jane Doe" required >
+                    <!-- <label for="aboutFormName">Jane Doe</label> -->
                 </div>
 
-                <div class="md-form">
-                    <input type="text" id="formUrl" class="form-control" placeholder="http://yourphotolink.com.jpg/">
-                    <label for="aboutFormURL">Link to a Photo Image</label>
+                <div class="md-form mt-4 mb-4">
+                    <h5 class="h5 pb-1">Link to a Photo Image</h5>
+                    <input type="text" id="formPic" class="form-control" placeholder="http://yourphotolink.com.jpg/" required>
                 </div>
             </form>
             <!-- Form -->
@@ -50,80 +50,248 @@
             <!-- Form -->
             <form class="text-left" style="color: #757575;">
                 <!-- Name -->
-                <div class="md-form mt-3">
-                    <h5>QUESTION 1.</h5>
-                    <select class="mdb-select dropdown-ins colorful-select">
-                        <option value="" disabled selected>Choose your option</option>
-                        <option value="1">Strongly Agree</option>
-                        <option value="2">Agree</option>
-                        <option value="3">Undecided</option>
-                        <option value="4">Disagree</option>
-                        <option value="5">Strongly Disagree</option>
+                <div class="md-form mt-3 mb-5">
+                    <h4 class=" h4">Question 1.</h4>
+                    <h5 class="pb-1 black-text">Your mind is always buzzing with unexplored ideas and plans.
+                    </h5>
+                    <select class="mdb-select text-black" id="q1">
+                        <option value="" disabled selected class="grey-text" required>Choose your option</option>
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2 (Agree)</option>
+                        <option value="3">3 (Neither Agree nor Disagree)</option>
+                        <option value="4">4 (Disagree)</option>
+                        <option value="5">5 (Strongly Disagree)</option>
                     </select>
                 </div>
-                <div class="md-form mt-3">
-                    <h5 class="h5">QUESTION 2.</h5>
-                    <select class="mdb-select dropdown-ins colorful-select">
-                        <option value="" disabled selected>Choose your option</option>
-                        <option value="1">Strongly Agree</option>
-                        <option value="2">Agree</option>
-                        <option value="3">Undecided</option>
-                        <option value="4">Disagree</option>
-                        <option value="5">Strongly Disagree</option>
-                    </select>
-                </div> 
-                <div class="md-form mt-3">
-                    <h5>QUESTION 3.</h5>
-                    <select class="mdb-select dropdown-ins colorful-select">
-                        <option value="" disabled selected>Choose your option</option>
-                        <option value="1">Strongly Agree</option>
-                        <option value="2">Agree</option>
-                        <option value="3">Undecided</option>
-                        <option value="4">Disagree</option>
-                        <option value="5">Strongly Disagree</option>
+                <div class="md-form mt-3 mb-5">
+                    <h4 class=" h4">Question 2.</h4>
+                    <h5 class="pb-1 black-text">Generally speaking, you rely more on your experience than your imagination.
+                    </h5>
+                    <select class="mdb-select text-black">
+                        <option value="" disabled selected class="grey-text">Choose your option</option>
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2 (Agree)</option>
+                        <option value="3">3 (Neither Agree nor Disagree)</option>
+                        <option value="4">4 (Disagree)</option>
+                        <option value="5">5 (Strongly Disagree)</option>
                     </select>
                 </div>
-                <div class="md-form mt-3">
-                    <h5>QUESTION 4.</h5>
-                    <select class="mdb-select dropdown-ins colorful-select">
-                        <option value="" disabled selected>Choose your option</option>
-                        <option value="1">Strongly Agree</option>
-                        <option value="2">Agree</option>
-                        <option value="3">Undecided</option>
-                        <option value="4">Disagree</option>
-                        <option value="5">Strongly Disagree</option>
+                <div class="md-form mt-3 mb-5">
+                    <h4 class=" h4">Question 3.</h4>
+                    <h5 class="pb-1 black-text">You find it easy to stay relaxed and focused even when there is some pressure.
+                    </h5>
+                    <select class="mdb-select text-black">
+                        <option value="" disabled selected class="grey-text">Choose your option</option>
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2 (Agree)</option>
+                        <option value="3">3 (Neither Agree nor Disagree)</option>
+                        <option value="4">4 (Disagree)</option>
+                        <option value="5">5 (Strongly Disagree)</option>
                     </select>
                 </div>
-                <div class="md-form mt-3">
-                    <h5>QUESTION 2.</h5>
-                    <select class="mdb-select dropdown-ins colorful-select">
-                        <option value="" disabled selected>Choose your option</option>
-                        <option value="1">Strongly Agree</option>
-                        <option value="2">Agree</option>
-                        <option value="3">Undecided</option>
-                        <option value="4">Disagree</option>
-                        <option value="5">Strongly Disagree</option>
+                <div class="md-form mt-3 mb-5">
+                    <h4 class=" h4">Question 4.</h4>
+                    <h5 class="pb-1 black-text">You rarely do something just out of sheer curiosity.
+                    </h5>
+                    <select class="mdb-select md-form">
+                        <option value="" disabled selected class="grey-text">Choose your option</option>
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2 (Agree)</option>
+                        <option value="3">3 (Neither Agree nor Disagree)</option>
+                        <option value="4">4 (Disagree)</option>
+                        <option value="5">5 (Strongly Disagree)</option>
                     </select>
-                </div>  
+                </div>
+                <div class="md-form mt-3 mb-5">
+                    <h4 class=" h4">Question 5.</h4>
+                    <h5 class="pb-1 black-text">People can rarely upset you.</h5>
+                    <select class="mdb-select">
+                        <option value="" disabled selected class="grey-text">Choose your option</option>
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2 (Agree)</option>
+                        <option value="3">3 (Neither Agree nor Disagree)</option>
+                        <option value="4">4 (Disagree)</option>
+                        <option value="5">5 (Strongly Disagree)</option>
+                    </select>
+                </div>
+                <div class="md-form mt-3 mb-5">
+                    <h4 class=" h4">Question 6.</h4>
+                    <h5 class="pb-1 black-text">It is often difficult for you to relate to other people’s feelings.</h5>
+                    <select class="mdb-select">
+                        <option value="" disabled selected class="grey-text">Choose your option</option>
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2 (Agree)</option>
+                        <option value="3">3 (Neither Agree nor Disagree)</option>
+                        <option value="4">4 (Disagree)</option>
+                        <option value="5">5 (Strongly Disagree)</option>
+                    </select>
+                </div>
+                <div class="md-form mt-3 mb-5">
+                    <h4 class=" h4">Question 7.</h4>
+                    <h5 class="pb-1 black-text">You rarely get carried away by fantasies and ideas.</h5>
+                    <select class="mdb-select">
+                        <option value="" disabled selected class="grey-text">Choose your option</option>
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2 (Agree)</option>
+                        <option value="3">3 (Neither Agree nor Disagree)</option>
+                        <option value="4">4 (Disagree)</option>
+                        <option value="5">5 (Strongly Disagree)</option>
+                    </select>
+                </div>
+                <div class="md-form mt-3 mb-5">
+                    <h4 class=" h4">Question 8.</h4>
+                    <h5 class="pb-1 black-text">You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h5>
+                    <select class="mdb-select">
+                        <option value="" disabled selected class="grey-text">Choose your option</option>
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2 (Agree)</option>
+                        <option value="3">3 (Neither Agree nor Disagree)</option>
+                        <option value="4">4 (Disagree)</option>
+                        <option value="5">5 (Strongly Disagree)</option>
+                    </select>
+                </div>
+                <div class="md-form mt-3 mb-5">
+                    <h4 class=" h4">Question 9.</h4>
+                    <h5 class="pb-1 black-text">It is often difficult for you to relate to other people’s feelings.</h5>
+                    <select class="mdb-select">
+                        <option value="" disabled selected class="grey-text">Choose your option</option>
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2 (Agree)</option>
+                        <option value="3">3 (Neither Agree nor Disagree)</option>
+                        <option value="4">4 (Disagree)</option>
+                        <option value="5">5 (Strongly Disagree)</option>
+                    </select>
+                </div>
+                <div class="md-form mt-3 mb-5">
+                    <h4 class=" h4">Question 10.</h4>
+                    <h5 class="pb-1 black-text">You feel more energetic after spending time with a group of people.</h5>
+                    <select class="mdb-select">
+                        <option value="" disabled selected class="grey-text">Choose your option</option>
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2 (Agree)</option>
+                        <option value="3">3 (Neither Agree nor Disagree)</option>
+                        <option value="4">4 (Disagree)</option>
+                        <option value="5">5 (Strongly Disagree)</option>
+                    </select>
+                </div>
+
+                <!-- Send button -->
+                <div class="sendBtn">
+            <button class="btn main btn-light-green btn-rounded btn-block z-depth-0 my-4 waves-effect rgba-green-light" type="submit" id="submitBtn">Find BestFriend!</button></div>
             </form>
             <!-- Form -->
         </div>
     </div>   
 </div>
-  <!-- Jumbotron -->
-    <!-- </div> -->
 
-    <!-- SCRIPTS -->
+
+
+<!-- Central Modal Small -->
+<div class="modal fade" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+
+  <!-- Change class .modal-sm to change the size of the modal -->
+  <div class="modal-dialog modal-sm modal-danger" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ALERT. YOU DID NOT COMPLETE THE SURVEY. PLEASE TRY AGAIN
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Central Modal Small -->
+
+<!-- Central Modal Medium Success -->
+<div class="modal fade" id="bestFriendModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-success" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">Your New Best-Friend!</p>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <h3 class="h3" id="matchName"></h3>
+          <img class="img z-depth-2 rounded-circle" id="matchPic" src="" alt="No Image" width= 250 height= 250>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">No, thanks</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Central Modal Medium Success-->
+
+
 
     <!-- JQuery -->
-    <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="../../js/tether.min.js"></script>
+    <script type="text/javascript" src="./js/tether.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="../../js/mdb.min.js"></script>
-    <script type="text/javascript" src="../../js/app.js"></script>
+    <script type="text/javascript" src="./js/mdb.min.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+
+
+    <script type="text/javascript">
+
+    
+    $("#submitBtn").on("click", function(event) {
+        event.preventDefault();
+        var emptyValues = [];
+        $( "select option:selected" ).each(function() {
+            emptyValues.push($(this).val());
+            return emptyValues;  
+    });
+    for (let i = 0; i < emptyValues.length; i++){
+        if (emptyValues[i] === ''){
+            $('#centralModalSm').modal();
+        }else {
+
+
+            var userValues = [];
+            $( "select option:selected" ).each(function() {
+                userValues.push($(this).val())
+            });
+
+            var newFriend = {
+                name: $("#formName").val().trim(),
+                photo: $("#formPic").val().trim(),
+                scores: userValues
+            };
+
+            var currentURL = window.location.origin;
+            //AJAX posts the data to friends API.
+            $.post(currentURL + "/api/friends", newFriend, function(data) {
+                //Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                $("#matchName").text(data.name);
+                $("#matchPic").attr("src", data.photo);
+                $('#bestFriendModal').modal();
+            });
+
+        }
+    }
+    });
+    </script>
 </body>
 
 </html>

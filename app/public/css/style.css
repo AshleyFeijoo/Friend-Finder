@@ -42,5 +42,23 @@
     background-attachment: fixed;
     background-size: cover;
 
+}
 
+.sendBtn{
+  width: 25%;
+  margin: 0 auto;
+}
+
+input.select-dropdown {
+  color: rgb(129, 129, 129);
+}
+
+h5{
+  color:black;
+}
+h4{
+  color: lightslategray;
+}
+.dropdown-content li>a, .dropdown-content li>span {
+  color: grey;
 }
