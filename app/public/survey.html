@@ -14,14 +14,16 @@
     <link href="./css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="./css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500,700&display=swap" rel="stylesheet">
+
 </head>
 
 <body class="m-0">
 <div class="container">
     <div class="card mt-2">
-        <h5 class="card-header green lighten-3 white-text text-left">
+        <h3 class="card-header green lighten-3 white-text text-left">
             <strong>About You</strong>
-        </h5>
+        </h3>
         <!--Card content-->
         <div class="card-body px-lg-5">
             <!-- Form -->
@@ -42,9 +44,9 @@
         </div>
     </div>
     <div class="card mt-3">
-        <h5 class="card-header green main white-text text-left">
+        <h3 class="card-header green main white-text text-left">
             <strong>Questionnaire</strong>
-        </h5>
+        </h3>
         <!--Card content-->
         <div class="card-body px-lg-5">
             <!-- Form -->
@@ -187,20 +189,22 @@
 
 
 <!-- Central Modal Small -->
-<div class="modal fade" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade" id="MyModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
 
   <!-- Change class .modal-sm to change the size of the modal -->
   <div class="modal-dialog modal-sm modal-danger" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
+    <div class="modal-content z-depth-1">
+      <div class="modal-header yellow p-2">
+          <h1 CLASS="h1 text-center text-white text-bold mx-auto">Attention</h1>
         <!-- <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4> -->
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        ALERT. YOU DID NOT COMPLETE THE SURVEY. PLEASE TRY AGAIN
+      <div class="modal-body text-center">
+        You have not filled out all of the questions.
+        <br>Please complete the survey.
       </div>
 
     </div>
@@ -213,27 +217,27 @@
   aria-hidden="true">
   <div class="modal-dialog modal-notify modal-success" role="document">
     <!--Content-->
-    <div class="modal-content">
-      <!--Header-->
-      <div class="modal-header">
-        <p class="heading lead">Your New Best-Friend!</p>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true" class="white-text">&times;</span>
-        </button>
-      </div>
-      <!--Body-->
-      <div class="modal-body">
-        <div class="text-center">
-          <h3 class="h3" id="matchName"></h3>
-          <img class="img z-depth-2 rounded-circle" id="matchPic" src="" alt="No Image" width= 250 height= 250>
+    <div class="modal-content text-center mx-auto  blue-grey lighten-5">
+            <!--Header-->
+            <div class="modal-header text-center d-flex justify-content-center">
+              <h2 class="h2 text-white">Your New Best-Friend is...</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" class="white-text">×</span>
+              </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+              <div class="text-center">
+                <h3 class="h3" id="matchName"></h3>
+                <img class="img z-depth-2 rounded-circle" id="matchPic" src="" alt="No Image" width="250" height="250">
+              </div>
+            </div>
+      
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+              <a type="button" class="btn btn-success waves-effect" data-dismiss="modal" id="noThanks">Try Again!</a>
+            </div>
         </div>
-      </div>
-
-      <!--Footer-->
-      <div class="modal-footer justify-content-center">
-        <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">No, thanks</a>
-      </div>
-    </div>
     <!--/.Content-->
   </div>
 </div>
@@ -254,44 +258,60 @@
 
     <script type="text/javascript">
 
-    
-    $("#submitBtn").on("click", function(event) {
-        event.preventDefault();
-        var emptyValues = [];
-        $( "select option:selected" ).each(function() {
-            emptyValues.push($(this).val());
-            return emptyValues;  
-    });
-    for (let i = 0; i < emptyValues.length; i++){
-        if (emptyValues[i] === ''){
-            $('#centralModalSm').modal();
-        }else {
-
-
+    $(document).ready(function () {
+        $("#submitBtn").on("click", function(event) {
+            event.preventDefault();
             var userValues = [];
-            $( "select option:selected" ).each(function() {
-                userValues.push($(this).val())
-            });
+            var emptyValues = [];
+            function validateForm() {
+                var isValid = true;
+                $('.form-control').each(function() {
+                    if ($(this).val() === ''){
+                        isValid = false;
+                    }
+                });
+                $('.mdb-select :selected').each(function() {
+                    if ($(this).val() === ""){
+                        isValid = false;
+                    }
+                });
+                return isValid;
+             };
+             if (validateForm() == true){
+                var newFriend = {
+                    name: $('#formName').val().trim(),
+                    photo: $('#formPic').val().trim(),
+                    scores: []
+                };
+                var scoresArray = [];
+                $('.mdb-select :selected').each(function(){
+                    scoresArray.push( parseInt( $(this).val() ) );
+                })
+                .promise().done(function(){
+                    newFriend.scores = scoresArray;
+                    console.log(scoresArray)
 
-            var newFriend = {
-                name: $("#formName").val().trim(),
-                photo: $("#formPic").val().trim(),
-                scores: userValues
-            };
-
-            var currentURL = window.location.origin;
-            //AJAX posts the data to friends API.
-            $.post(currentURL + "/api/friends", newFriend, function(data) {
-                //Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                $("#matchName").text(data.name);
-                $("#matchPic").attr("src", data.photo);
-                $('#bestFriendModal').modal();
-            });
-
+                    var currentURL = window.location.origin;
+                    $.post(currentURL + "/api/friends", newFriend, function(data) {
+                        $("#matchName").text(data.name);
+                        $("#matchPic").attr("src", data.photo);
+                        $("#bestFriendModal").modal("toggle");
+                    });
+                });
+                disablebtn();
+             }else{
+                $("#MyModalSm").modal();
+             }
+        });   
+        function disablebtn(){
+            $("#submitBtn").attr("disabled", true);
         }
-    }
+
+        $("#noThanks").on("click", function(event) {
+            $("#submitBtn").attr("disabled", false);
+            location.reload();
+        });
     });
     </script>
 </body>
-
 </html>

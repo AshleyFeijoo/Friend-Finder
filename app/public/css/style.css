@@ -1,7 +1,10 @@
 /* YOUR CUSTOM STYLES */
-.bg {
 
-  
+body{
+  font-family: 'Raleway', sans-serif!important;
+
+}
+.bg {
     /* Full height */
     height: 100%;
   
@@ -61,4 +64,9 @@ h4{
 }
 .dropdown-content li>a, .dropdown-content li>span {
   color: grey;
+}
+h1.h1.text-center.text-white.text-bold.mx-auto {
+  font-variant: all-small-caps;
+
+  font-weight: 900;
 }

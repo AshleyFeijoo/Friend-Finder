@@ -4,31 +4,42 @@ var friendsList = require("../data/friends");
 module.exports = function(app) {
     app.get('/api/friends', function(req, res) {
         res.json(friendsList);
-        console.log("YEet")
     });
 
-    app.post('/api/friends', function(req, res) {
-		// Capture the user input object
-        var newFriend = req.body;
-        var userScores = newFriend.scores;
-        var scoresArray = [];
-        var friendCount = 0;
-        var bestMatch = 0;
 
-    //runs through all current friends in list
-    for(var i=0; i<friendsList.length; i++){
-      var scoresDiff = 0;
-      //run through scores to compare friends
-      for(var j=0; j<userScores.length; j++){
-        scoresDiff += (Math.abs(parseInt(friendsList[i].scores[j]) - parseInt(userScores[j])));
-        console.log("Scores Diff " + scoresDiff)
-        
-      };
-      scoresArray.push(scoresDiff);
-    };
-    console.log(scoresArray);
+
+    app.post('/api/friends', function(req,res){
+          console.log(JSON.stringify(req.body.scores));
+          var friendScores = req.body.scores;
+          var scoreArr = [];
+          var goodMatch = 0;
+
+          for(let i=0; i<friendsList.length; i++){
+            var totalDiff = 0;
+            for (let j =0; j <friendScores.length; j++){
+              totalDiff += (Math.abs(parseInt(friendsList[i].scores[j]) - parseInt(friendScores[j])));
+            }
+            scoreArr.push(totalDiff);
+          }
+  
+          // console.log(totalDiff);
+          // var closestMatch = Math.min(...scoreArr);
+          // console.log(closestMatch);
+          // var closestMatchInd = friendsList.indexOf(closestMatch);
+          // console.log(closestMatchInd);
+
+          for(var i=0; i<scoreArr.length; i++){
+            if(scoreArr[i] <= scoreArr[goodMatch]){
+              goodMatch = i;
+            }
+          }
+  
+        var bestMatch = friendsList[goodMatch];
+        res.json(bestMatch);
     
-    // friendsList.push(req.body);
+    //     //pushes ew submission into the friendsList array
+        friendsList.push(req.body);
 
-});
+  }); 
 }
+
