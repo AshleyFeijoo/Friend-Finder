@@ -8,6 +8,10 @@ body{
 h2{
   color: #3a3a3a;
 }
+
+.main_content{
+  height:100vh;
+}
 .bg {
     /* Full height */
     height: 100%;
