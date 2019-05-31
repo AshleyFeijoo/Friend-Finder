@@ -17,3 +17,7 @@
 ***
 
 ![WELCOME Image](/app/public/img/5f6c32a2e544540ebb5ba56cf0d1d203.png)
+
+***
+
+![Survey_Image](/app/public/img/survey.png)
