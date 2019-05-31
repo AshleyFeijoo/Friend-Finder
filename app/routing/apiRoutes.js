@@ -21,12 +21,6 @@ module.exports = function(app) {
             }
             scoreArr.push(totalDiff);
           }
-  
-          // console.log(totalDiff);
-          // var closestMatch = Math.min(...scoreArr);
-          // console.log(closestMatch);
-          // var closestMatchInd = friendsList.indexOf(closestMatch);
-          // console.log(closestMatchInd);
 
           for(var i=0; i<scoreArr.length; i++){
             if(scoreArr[i] <= scoreArr[goodMatch]){
@@ -36,9 +30,8 @@ module.exports = function(app) {
   
         var bestMatch = friendsList[goodMatch];
         res.json(bestMatch);
-    
-    //     //pushes ew submission into the friendsList array
         friendsList.push(req.body);
+        console.log(friendsList)
 
   }); 
 }

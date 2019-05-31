@@ -1,8 +1,12 @@
 /* YOUR CUSTOM STYLES */
 
 body{
-  font-family: 'Raleway', sans-serif!important;
+  font-family: 'Corben', cursive!important;
 
+}
+
+h2{
+  color: #3a3a3a;
 }
 .bg {
     /* Full height */
