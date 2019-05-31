@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Friend Finder - Match-Making application for friends
 
 ## Overview :fire: :fire: :fire
@@ -15,3 +16,6 @@
 <hr>
 
 ![WELCOME Image](/images/Liri_Bot_WELCOME_Demo.png)
+=======
+# Friend-Finder
+>>>>>>> 6d8782f71dfe9d48dfa95866a1c927249d24f679
