@@ -8,9 +8,7 @@
 
 * Friend Finder is deployed to Heroku.
 
-## GIVE IT A TRY
-
-# **[+++DEMO+++++](https://sleepy-coast-25629.herokuapp.com/)**
+## **[++++ DEMO ++++](https://sleepy-coast-25629.herokuapp.com/)**
 
 ### Dependencies
 
