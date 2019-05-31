@@ -25,3 +25,9 @@
 ![Survey_Image](/app/public/img/survey.png)
 
 ***
+
+***
+
+![Result_Image](/app/public/img/Bestie.jpg)
+
+***
