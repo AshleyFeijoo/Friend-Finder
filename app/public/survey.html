@@ -217,6 +217,7 @@
 <!-- Central Modal Small -->
 
 <!-- Central Modal Medium Success -->
+
 <div class="modal fade" id="bestFriendModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-notify modal-success" role="document">
@@ -225,15 +226,12 @@
             <!--Header-->
             <div class="modal-header text-center d-flex justify-content-center">
               <h2 class="h2 text-white">Your New Best-Friend is...</h2>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true" class="white-text">×</span>
-              </button>
             </div>
             <!--Body-->
             <div class="modal-body">
               <div class="text-center">
                 <h3 class="h3" id="matchName"></h3>
-                <img class="img z-depth-2 rounded-circle" id="matchPic" src="" alt="No Image" width="250" height="250">
+                <img class="img z-depth-2 rounded-circle" id="matchPic" src="" alt="No Image" width="80%" height="80%">
               </div>
             </div>
       
@@ -261,7 +259,6 @@
 
 
     <script type="text/javascript">
-
     $(document).ready(function () {
         $("#submitBtn").on("click", function(event) {
             event.preventDefault();
@@ -272,7 +269,6 @@
                 $('.form-control').each(function() {
                     if ($(this).val() === ''){
                         isValid = false;
-                        
                     }
                 });
                 $('.mdb-select :selected').each(function() {
@@ -312,13 +308,13 @@
         }
 
         $('#myModalSm').on('hidden.bs.modal', function (e) {
-    location.reload();
-})
-        // $("#noThanks").on("click", function(event) {
-        //     // $("#submitBtn").attr("disabled", false);
-        //     location.reload();
+            location.reload();
+        })
+        $("#noThanks").on("click", function(event) {
+            // $("#submitBtn").attr("disabled", false);
+            location.reload();
 
-        // });
+        });
     });
     </script>
 </body>
