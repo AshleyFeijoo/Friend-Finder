@@ -78,3 +78,8 @@ h1.h1.text-center.text-white.text-bold.mx-auto {
 
   font-weight: 900;
 }
+
+.container {
+  max-width: 960px;
+  line-height:1.5;
+}

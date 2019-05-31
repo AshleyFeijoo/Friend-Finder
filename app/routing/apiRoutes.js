@@ -9,7 +9,6 @@ module.exports = function(app) {
 
 
     app.post('/api/friends', function(req,res){
-          console.log(JSON.stringify(req.body.scores));
           var friendScores = req.body.scores;
           var scoreArr = [];
           var goodMatch = 0;
@@ -31,7 +30,7 @@ module.exports = function(app) {
         var bestMatch = friendsList[goodMatch];
         res.json(bestMatch);
         friendsList.push(req.body);
-        console.log(friendsList)
+        console.log(friendsList);
 
   }); 
 }

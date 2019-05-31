@@ -4,7 +4,9 @@
 
 * Friend Finder is a survey-based match-making application. Friend Finder's algorithm calculates your closest match based on survey answers.
 
-*Friend Finder is deployed to Heroku.
+* When a user's Friend-Match is found, their name and photo will be presented.
+
+* Friend Finder is deployed to Heroku.
 
 ### Dependencies
 
@@ -12,6 +14,6 @@
 * [Express.js](https://expressjs.com/)
 * [Path](https://github.com/mtrpcic/pathjs)
 
-<hr>
+***
 
-![WELCOME Image](/images/Liri_Bot_WELCOME_Demo.png)
+![WELCOME Image](/app/public/img/5f6c32a2e544540ebb5ba56cf0d1d203.png)
