@@ -1,6 +1,6 @@
 # Friend Finder - Match-Making application for friends
 
-## Overview :fire: :fire: :fire
+## Overview :fire: :fire: :fire:
 
 * Friend Finder is a survey-based match-making application. Friend Finder's algorithm calculates your closest match based on survey answers.
 
